@@ -1,0 +1,694 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2.0.4",
+    "title": "Investec connector",
+    "description": "Investec connector"
+  },
+  "host": "banking.make.dev",
+  "basePath": "/investec",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/special/cards/events/subscriptions/power_automate": {
+      "x-ms-notification-content": {
+        "description": "Webhook for Power Automate",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "card_id": {
+              "type": "string",
+              "description": "card_id"
+            },
+            "date_time": {
+              "type": "string",
+              "description": "date_time",
+              "title": "",
+              "format": ""
+            },
+            "card_display": {
+              "type": "string",
+              "description": "card_display"
+            },
+            "amount": {
+              "type": "number",
+              "format": "float",
+              "description": "amount"
+            },
+            "account_number": {
+              "type": "string",
+              "description": "account_number"
+            },
+            "merchant_category_code": {
+              "type": "string",
+              "description": "merchant_category_code"
+            },
+            "merchant_category_key": {
+              "type": "string",
+              "description": "merchant_category_key"
+            },
+            "merchant_category_name": {
+              "type": "string",
+              "description": "merchant_category_name"
+            },
+            "merchant_name": {
+              "type": "string",
+              "description": "merchant_name"
+            },
+            "merchant_city": {
+              "type": "string",
+              "description": "merchant_city"
+            },
+            "merchant_country_code": {
+              "type": "string",
+              "description": "merchant_country_code"
+            },
+            "merchant_country_alpha3": {
+              "type": "string",
+              "description": "merchant_country_alpha3"
+            },
+            "merchant_country_name": {
+              "type": "string",
+              "description": "merchant_country_name"
+            }
+          }
+        },
+        "headers": {
+          "Location": {
+            "description": "Location",
+            "type": "string"
+          }
+        }
+      },
+      "post": {
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "summary": "Card Spend",
+        "description": "When my Investec card is used",
+        "operationId": "CardSpend",
+        "x-ms-trigger": "single",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "TriggerUrl": {
+                  "type": "string",
+                  "x-ms-visibility": "internal",
+                  "x-ms-notification-url": true,
+                  "description": "trigger url",
+                  "title": "trigger_url"
+                }
+              },
+              "required": [
+                "TriggerUrl"
+              ]
+            }
+          }
+        ],
+        "x-ms-visibility": "important"
+      }
+    },
+    "/special/cards/events/subscriptions/power_automate/unsubscribe": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Delete Card Spend Webhook",
+        "description": "Delete Card Spend Webhook",
+        "operationId": "DeleteCardSpendWebhook",
+        "x-ms-visibility": "internal",
+        "parameters": []
+      }
+    },
+    "/za/pb/v1/accounts/{accountId}/transactions": {
+      "get": {
+        "summary": "Get Transactions",
+        "description": "Transactions",
+        "operationId": "Transactions",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Account ID"
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-ms-visibility": "advanced",
+            "format": "date",
+            "description": "From Date",
+            "x-ms-summary": "The date at which the transactions should start"
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-ms-visibility": "advanced",
+            "format": "date",
+            "description": "To Date",
+            "x-ms-summary": "The date at which the transactions should end"
+          },
+          {
+            "name": "transactionType",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "",
+            "x-ms-visibility": "advanced",
+            "description": "Transaction Type",
+            "x-ms-summary": "The type of transactions to return"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "transactions": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "accountId": {
+                            "type": "string",
+                            "description": "accountId"
+                          },
+                          "type": {
+                            "type": "string",
+                            "description": "type"
+                          },
+                          "transactionType": {
+                            "type": "string",
+                            "description": "transactionType"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "status"
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "description"
+                          },
+                          "cardNumber": {
+                            "type": "string",
+                            "description": "cardNumber"
+                          },
+                          "postedOrder": {
+                            "type": "integer",
+                            "format": "int32",
+                            "description": "postedOrder"
+                          },
+                          "postingDate": {
+                            "type": "string",
+                            "description": "postingDate"
+                          },
+                          "valueDate": {
+                            "type": "string",
+                            "description": "valueDate"
+                          },
+                          "actionDate": {
+                            "type": "string",
+                            "description": "actionDate"
+                          },
+                          "transactionDate": {
+                            "type": "string",
+                            "description": "transactionDate"
+                          },
+                          "amount": {
+                            "type": "number",
+                            "format": "float",
+                            "description": "amount"
+                          },
+                          "runningBalance": {
+                            "type": "number",
+                            "format": "float",
+                            "description": "runningBalance"
+                          }
+                        }
+                      },
+                      "description": "transactions"
+                    }
+                  },
+                  "description": "data"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/za/pb/v1/accounts": {
+      "get": {
+        "summary": "Get Accounts",
+        "description": "Accounts",
+        "operationId": "Accounts",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "accounts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "accountId": {
+                            "type": "string",
+                            "description": "accountId",
+                            "title": "Account ID"
+                          },
+                          "accountNumber": {
+                            "type": "string",
+                            "description": "accountNumber",
+                            "title": "Account Number"
+                          },
+                          "accountName": {
+                            "type": "string",
+                            "description": "accountName",
+                            "title": "Account Name"
+                          },
+                          "referenceName": {
+                            "type": "string",
+                            "description": "referenceName",
+                            "title": "Reference Name"
+                          },
+                          "productName": {
+                            "type": "string",
+                            "description": "productName",
+                            "title": "Product Name"
+                          }
+                        }
+                      },
+                      "description": "accounts"
+                    }
+                  },
+                  "description": "data"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/za/pb/v1/accounts/{accountId}/balance": {
+      "get": {
+        "summary": "Get Account Balance",
+        "description": "Account balance",
+        "operationId": "AccountBalance",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Account ID",
+            "x-ms-summary": "The Account ID to return the balance for"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "accountId": {
+                      "type": "string",
+                      "description": "accountId",
+                      "title": "Account ID"
+                    },
+                    "currentBalance": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "currentBalance",
+                      "title": "Current Balance"
+                    },
+                    "availableBalance": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "availableBalance",
+                      "title": "Available Balance"
+                    },
+                    "currency": {
+                      "type": "string",
+                      "description": "currency",
+                      "title": "Currency"
+                    }
+                  },
+                  "description": "data"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/za/v1/cards": {
+      "get": {
+        "summary": "Get Cards",
+        "description": "Cards",
+        "operationId": "Cards",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "CardKey": {
+                        "type": "string",
+                        "description": "CardKey",
+                        "title": "Card Key"
+                      },
+                      "CardNumber": {
+                        "type": "string",
+                        "description": "CardNumber",
+                        "title": "Card Number"
+                      },
+                      "IsProgrammable": {
+                        "type": "boolean",
+                        "description": "IsProgrammable",
+                        "title": "Is Programmable",
+                        "enum": [
+                          "true",
+                          "false"
+                        ]
+                      },
+                      "Status": {
+                        "type": "string",
+                        "description": "Status",
+                        "title": "Status"
+                      },
+                      "CardTypeCode": {
+                        "type": "string",
+                        "description": "CardTypeCode",
+                        "title": "Card Type Code"
+                      },
+                      "AccountNumber": {
+                        "type": "string",
+                        "description": "AccountNumber",
+                        "title": "Account Number"
+                      },
+                      "AccountId": {
+                        "type": "string",
+                        "description": "AccountId",
+                        "title": "Account ID"
+                      },
+                      "EmbossedName": {
+                        "type": "string",
+                        "description": "EmbossedName",
+                        "title": "Embossed Name"
+                      }
+                    }
+                  },
+                  "description": "data"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/za/v1/cards/merchants": {
+      "get": {
+        "summary": "Get Card Merchants",
+        "description": "Card merchants",
+        "operationId": "CardMerchants",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "Code": {
+                            "type": "string",
+                            "description": "Code"
+                          },
+                          "Name": {
+                            "type": "string",
+                            "description": "Name"
+                          }
+                        }
+                      },
+                      "description": "result"
+                    }
+                  },
+                  "description": "data"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/special/cards/{cardKey}/policy": {
+      "post": {
+        "summary": "Change Card Rules",
+        "description": "Card rules",
+        "operationId": "ChangeCardRules",
+        "parameters": [
+          {
+            "name": "cardKey",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Card Key",
+            "x-ms-summary": "The key of the card to update rules on"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sendEvents": {
+                  "type": "boolean",
+                  "description": "sendEvents",
+                  "title": "Send Spend Events",
+                  "enum": [
+                    true,
+                    false
+                  ],
+                  "default": true
+                },
+                "approveTransactions": {
+                  "type": "boolean",
+                  "description": "approveTransactions",
+                  "title": "Approve Transactions",
+                  "enum": [
+                    true,
+                    false
+                  ],
+                  "default": true
+                }
+              },
+              "required": [
+                "approveTransactions",
+                "sendEvents"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "codeId": {
+                  "type": "string",
+                  "description": "codeId"
+                },
+                "code": {
+                  "type": "string",
+                  "description": "code"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "description": "createdAt"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "description": "updatedAt"
+                },
+                "publishedAt": {
+                  "type": "string",
+                  "description": "publishedAt"
+                },
+                "error": {
+                  "type": "string",
+                  "description": "error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/special/accounts/{accountId}/transfer": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "transferResponse": {
+                      "type": "object",
+                      "properties": {
+                        "TransferResponses": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "PaymentReferenceNumber": {
+                                "type": "string",
+                                "description": "Payment Reference Number"
+                              },
+                              "PaymentDate": {
+                                "type": "string",
+                                "description": "Payment Date"
+                              },
+                              "Status": {
+                                "type": "string",
+                                "description": "Status"
+                              },
+                              "BeneficiaryName": {
+                                "type": "string",
+                                "description": "Beneficiary Name"
+                              },
+                              "BeneficiaryAccountId": {
+                                "type": "string",
+                                "description": "Beneficiary Account ID"
+                              },
+                              "AuthorisationRequired": {
+                                "type": "boolean",
+                                "description": "Authorisation Required"
+                              }
+                            }
+                          },
+                          "description": "Transfer Responses"
+                        },
+                        "ErrorMessage": {
+                          "type": "string",
+                          "description": "Error Message"
+                        }
+                      },
+                      "description": "Transfer Response"
+                    }
+                  },
+                  "description": "data"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Transfer Money",
+        "description": "Transfer Money",
+        "operationId": "TransferMoney",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Account ID",
+            "x-ms-summary": "The account to transfer money from"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "beneficiaryAccountId": {
+                  "type": "string",
+                  "description": "The account to transfer money to",
+                  "title": "Beneficiary Account ID"
+                },
+                "amount": {
+                  "type": "string",
+                  "description": "amount",
+                  "title": "Amount"
+                },
+                "myReference": {
+                  "type": "string",
+                  "description": "My reference",
+                  "title": "My Reference"
+                },
+                "theirReference": {
+                  "type": "string",
+                  "description": "The beneficiary's reference",
+                  "title": "Their Reference"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "basic_auth": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "basic_auth": []
+    }
+  ],
+  "tags": []
+}
