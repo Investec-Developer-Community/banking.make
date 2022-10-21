@@ -4,15 +4,17 @@ router.use(require('./investec/auth'))
 router.use('/special', require('./investec/special'))
 
 const Investec = require('../modules/investec')
-
-// filter out cards not matching this partition, if such a rule exists
 const cardPartitions = require('./investec/card_partitions')
+
+// This route is not a pure proxy because we want to filter the results if there is a partition i.e. when sharing a single account with many users while only showing them particular cards
 router.get('/za/v1/cards', async (_req, _res) => {
   const investec = new Investec(_req.currentUser.token)
   const response = await investec.getWithAuth(`/za/v1/cards`)
 
   let cards = response.data.data.cards
 
+  // filter out any cards that aren't granted to this partition,
+  // if such a partition exists
   if (_req.currentUser.partition) {
     const partitionedUsername = [_req.currentUser.username, _req.currentUser.partition].join("/")
     const partitionRule = cardPartitions.find(p => p.partitionedUsername == partitionedUsername)

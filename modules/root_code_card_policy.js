@@ -1,5 +1,6 @@
 module.exports = {
 
+  // Converts simple flags into a JS bundle to deploy as RootCode
   build(sendEvents, approveTransactions, username, partition) {
     let token = username
     if (partition) { token += `/${partition}` }
@@ -7,7 +8,7 @@ module.exports = {
 const config = {
   approveTransactions: ${approveTransactions},
   sendEvents: ${sendEvents},
-  eventUrl: "https://pb.dandavey.repl.co/investec/special/cards/events"
+  eventUrl: "https://${process.env.DOMAIN}/investec/special/cards/events"
 }
 
 const beforeTransaction = async (transaction) => {

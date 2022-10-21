@@ -14,6 +14,4 @@ const cardPartitions = [
   // },
 ]
 
-// TODO export properly
-
 module.exports = cardPartitions

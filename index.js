@@ -15,7 +15,6 @@ app.use(express.json());
 
 app.get('/', async (_req, _res) => _res.render('index.handlebars', {}))
 app.use('/investec', require('./routes/investec'))
-app.use('/something_cool', require('./routes/something_cool'));
 
 
 // TODO upgrade this to catching on the controller level and returning a json error, rather than just timing out on the request side (but not breaking)

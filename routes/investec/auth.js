@@ -1,4 +1,8 @@
 function splitPartitionFromToken(partitionedToken) {
+  // pulls out an optional partition (subfolder) from API credentials
+  // which is used when filtering Investec API responses to show only
+  // certain cards
+
   const partitionedCredentials = new Buffer(partitionedToken, 'base64').toString()
   const [partitionedUsername, password] = partitionedCredentials.split(":")
   const [username, partition] = partitionedUsername.split("/")

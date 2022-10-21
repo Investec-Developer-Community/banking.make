@@ -4,6 +4,10 @@ const db = new Database();
 const axios = require('axios')
 const logError = (error) => console.log(error.toJSON())
 
+// Uses Replit built-in database to handle a list of Power Automate flow subscriptions, and allows broadcasting of events to those subscribers via their provided webhooks
+
+// TODO: rework this so that it doesn't hit replit's database limits. see: https://docs.replit.com/hosting/database-faq
+
 class PowerAutomate {
   async resetSubscribers() {
     await db.set('subscribers', [])

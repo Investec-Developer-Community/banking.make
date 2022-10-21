@@ -1,6 +1,8 @@
 const axios = require('axios')
 const logError = (error) => console.log(error.toJSON())
 
+// Simple adapter to fetch bearer tokens and proxy requests to Investec's API
+
 class Investec {
   credentials = null
   authToken = null

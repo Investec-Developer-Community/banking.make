@@ -8,6 +8,9 @@ const cardPolicy = require('../../modules/root_code_card_policy')
 const PowerAutomate = require('../../modules/power_automate')
 const Investec = require('../../modules/investec')
 
+
+// Converts simple policy rules (sendEvents, approveTransactions) into a JS bundle
+// and deploys it onto a particular card
 router.post('/cards/:cardKey/policy', async (_req, _res) => {
   console.log(_req.body)
   const investec = new Investec(_req.currentUser.token)
@@ -23,6 +26,7 @@ router.post('/cards/:cardKey/policy', async (_req, _res) => {
 })
 
 
+// Receives a card event from RootCode and passes the event on to any Power Automate subscribers
 router.post('/cards/events', async (_req, _res) => {
   let data = _req.body.data
 
@@ -50,15 +54,19 @@ router.post('/cards/events', async (_req, _res) => {
 })
 
 
+// Adds a Power Automate flow subscriber, this triggers when the
+// Power Automate flow is created with a "Card Spend" event as the trigger
 router.post('/cards/events/subscriptions/power_automate', async (_req, _res) => {
   const powerAutomate = new PowerAutomate()
   await powerAutomate.addSubscriber(_req.currentUser.username, _req.currentUser.partition, _req.body.TriggerUrl)
   _res.json({ ok: true })
 })
 
+
+// Makes a single money transfer between two accounts
+// this adapter exists because Power Automate can't work with the JSON
+// format that Investec wants (arrays as base attributes)
 router.post('/accounts/:accountId/transfer', async (_req, _res) => {
-  // PowerAutomate says that a JSON array request is not valid
-  // so we have to do this adapting to make it work
   console.log(_req.body)
   const investec = new Investec(_req.currentUser.token)
   const transferInstructions = [
@@ -80,5 +88,6 @@ router.post('/accounts/:accountId/transfer', async (_req, _res) => {
   _res.status(response.status)
   _res.json(response.data)
 })
+
 
 module.exports = router
