@@ -1,6 +1,13 @@
 # banking.make.dev
 
-This repo is a community space for building and extending programmable banking API functionality.
+This repo is a community space for playing with programmable banking, and building/extending its API functionality.
+
+## Getting set up
+- Fork the code - either from this REPL directly or [from GitHub](http://github.com/programmable-banking-community/banking.make/issues/new) if you prefer to work locally
+- Configure the app's components to point to the domain your REPL is hosted at
+  - Set the `DOMAIN` secret, the default is `banking.make.dev` - this is used in the root code compiler among others
+  - Update the connector file in `public/Investec.swagger.json` and replace `banking.make.dev`
+- `npm install` and `npm start` (I think, not sure - I just use Replit and it auto-boots)
 
 
 ## Features
@@ -19,31 +26,22 @@ This repo is a community space for building and extending programmable banking A
 - `routes/investec/special.js` contains several routes specific to Power Automate
 
 
-## Getting set up
-- Fork this REPL
-- Configure the app's components to point to **the domain your REPL is hosted at**
-  - Set the `DOMAIN` secret, the default is `banking.make.dev` - this is used in the root code compiler among others
-  - Update the connector file in `public/Investec.swagger.json` and replace `banking.make.dev`
 
 ## How to contribute
 
 ### Bounties
-- Once you're forked the app and have it booting, check out (TODO ALGORA LINK) for open app bounties.
-- Claim a bounty and complete it by creating a pull request to the main repo.
-- Once your code is merged into the master app, you'll receive your bounty reward
+- Check out [available bounties on GitHub](https://github.com/programmable-banking-community/banking.make/issues?q=is%3Aissue+is%3Aopen+label%3Abounty)
+- If you see one that you like, comment that you want to claim it. The person that created the bounty will respond with a go-ahead.
+- Write the necessary code or documentation in your own branch.
+- Create a pull request into the main GitHub repo with your changes.
+- Once your code is merged into the master app, you'll receive your bounty reward.
 
-TODO: Something around adding stuff in `dev notes` and changelog and stuff
+__ProTip:__ If you learn something interesting while working in the codebase, be sure to add it in `./knowledge` so everyone can benefit!
 
-### Issue tracking
-Report any issues on the GitHub page. (TODO LINK)
 
 ### Other features
-Feel free to extend the app with other programmable banking features you'd like. We can't guarantee it'll be merged but if it provides real value there's a good chance it will be. Please make sure your code is well documented and it's reason for existing is explained well.
 
+**Feel free to extend this app with other programmable banking features you'd like.** We can't guarantee it'll be merged into the main branch, but if it provides real value there's a good chance it will be. Please make sure your code is well documented and it's reason for existing is explained well.
 
-## Important links
-- Slack
-- GitHub
-- ..
-
-
+### Issue tracking
+[Report any issues on GitHub](https://github.com/programmable-banking-community/banking.make/issues/new)
