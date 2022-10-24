@@ -3,7 +3,7 @@
 This repo is a community space for playing with programmable banking, and building/extending its API functionality.
 
 ## Getting set up
-- Fork the code - either from this REPL directly or [from GitHub](http://github.com/programmable-banking-community/banking.make/issues/new) if you prefer to work locally
+- Fork the code - either from this [REPL directly](https://replit.com/@OfferZenMake/programmable-banking) or [from GitHub](http://github.com/programmable-banking-community/banking.make/issues/new) if you prefer to work locally
 - Configure the app's components to point to the domain your REPL is hosted at
   - Set the `DOMAIN` secret, the default is `banking.make.dev` - this is used in the root code compiler among others
   - Update the connector file in `public/Investec.swagger.json` and replace `banking.make.dev`
