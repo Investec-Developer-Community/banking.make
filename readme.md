@@ -14,17 +14,17 @@ __What do I do when I find a bounty I like?__
 - If you see one that you like, comment that you want to claim it. The person that created the bounty will respond with a "go-ahead 👍".
 - You can clone this repo and work on your local machine if you want. 
 
-💡 __ProTip:__ but we recommend [forking our REPL on Replit](https://replit.com/@OfferZenMake/programmable-banking) for a quick-start. Replit is a great dev tool that makes it easy to run and edit code.
+💡 __ProTip:__ We recommend [forking our REPL on Replit](https://replit.com/@OfferZenMake/programmable-banking) for a quick-start. Replit is a great dev tool that makes it easy to run and edit code.
 
 - Write the necessary code or documentation in your fork.
 - Create a pull request into the main GitHub repo with your changes.
-- Once your code is merged into the master app, you'll receive your bounty reward.
-
-💡 __ProTip:__ If you learn something interesting while working in the codebase, be sure to add it in `./knowledge` so everyone can benefit!
+- Once your code is merged into the master app, you'll receive your bounty reward. 🏆
 
 
 __Where do I get support__
 - Great question! Drop into the [dedicated bounties Slack channel here](https://offerzen-community.slack.com/archives/C048GPNT49W). We'll be more than happy to help with any questiobs or support around your bounties build/ the bounties in general/ or if you just want to hang out and help others. 
+
+💡 __ProTip:__ If you learn something interesting while working in the codebase, be sure to add it in `./knowledge` so everyone can benefit!
 
 ### Other features
 
