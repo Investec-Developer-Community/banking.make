@@ -5,7 +5,9 @@ This repo is a community space for playing with programmable banking, and buildi
 
 ## How to contribute
 
-### Bounties **Bounty Season #1: 25 October to 14 November**
+### Bounties 
+
+**Bounty Season #1: 25 October to 14 November 2022**
 
 - We have a list of bounties for functionality that we think will be useful to add.
 - 👉 Check out [available bounties as a starting point](https://github.com/programmable-banking-community/banking.make/issues?q=is%3Aissue+is%3Aopen+label%3Abounty)!
