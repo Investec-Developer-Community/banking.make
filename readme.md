@@ -1,10 +1,13 @@
 # banking.make.dev
 
-This repo is a community space for playing with programmable banking, and building/extending its API functionality.
+This repo is a community space for playing with programmable banking, and building/extending its API functionality. We hope that anyone interested in building useful financial tools can use this repo to increase functionality for personal and business use-cases.
+
 
 ## How to contribute
 
 ### Bounties
+
+- We have a list of bounties for functionality that we think will be useful to add. Check it out as a starting point!
 - **Bounty Season #1: 25 October to 14 November**
 - Check out [available bounties on GitHub](https://github.com/programmable-banking-community/banking.make/issues?q=is%3Aissue+is%3Aopen+label%3Abounty)
 - If you see one that you like, comment that you want to claim it. The person that created the bounty will respond with a go-ahead.
@@ -32,6 +35,7 @@ __ProTip:__ If you learn something interesting while working in the codebase, be
 
 
 ## Features
+
 ### Investec API
 - `routes/investec.js` proxies any incoming `GET` and `POST` requests to the investec API while converting API keys into single-use bearer tokens. The app doesn't store any sensitive information.
 - `routes/investec/auth.js` contains middleware to extract partition information from API keys, if the requester is using partitioned access and `routes/investec/card_partitions.js` contains config for those partitions
@@ -40,6 +44,7 @@ __ProTip:__ If you learn something interesting while working in the codebase, be
 
 ### RootCode card control
 - `modules/root_code_card_policy.js` converts simple config flags into a JS bundle that can be compiled as RootCode onto a supported card
+
 
 ### Power Automate
 - There is a connector file in `public/Investec.swagger.json` that you can import into [Microsoft Power Automate](https://make.powerautomate.com) or any other low-code tool
