@@ -21,7 +21,7 @@ __What do I do when I find a bounty I like?__
 - Once your code is merged into the master app, you'll receive your bounty reward. 🏆
 
 
-__Where do I get support__
+__Where do I get support?__
 - Great question! Drop into the [dedicated bounties Slack channel here](https://offerzen-community.slack.com/archives/C048GPNT49W). We'll be more than happy to help with any questiobs or support around your bounties build/ the bounties in general/ or if you just want to hang out and help others. 
 
 💡 __ProTip:__ If you learn something interesting while working in the codebase, be sure to add it in `./knowledge` so everyone can benefit!
