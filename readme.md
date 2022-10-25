@@ -11,7 +11,8 @@ This repo is a community space for playing with programmable banking, and buildi
 - **Bounty Season #1: 25 October to 14 November**
 - Check out [available bounties on GitHub](https://github.com/programmable-banking-community/banking.make/issues?q=is%3Aissue+is%3Aopen+label%3Abounty)
 - If you see one that you like, comment that you want to claim it. The person that created the bounty will respond with a go-ahead.
-- You can [fork our REPL on Replit](https://replit.com/@OfferZenMake/programmable-banking) for a quick-start. Replit is a great dev tool that makes it easy to run and edit code. Write the necessary code or documentation in your fork.
+- You can clone this repo and work on your local machine if you want, but we recommend [forking our REPL on Replit](https://replit.com/@OfferZenMake/programmable-banking) for a quick-start. Replit is a great dev tool that makes it easy to run and edit code.
+- Write the necessary code or documentation in your fork.
 - Create a pull request into the main GitHub repo with your changes.
 - Once your code is merged into the master app, you'll receive your bounty reward.
 
