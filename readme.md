@@ -2,6 +2,26 @@
 
 This repo is a community space for playing with programmable banking, and building/extending its API functionality.
 
+## How to contribute
+
+### Bounties
+- Check out [available bounties on GitHub](https://github.com/programmable-banking-community/banking.make/issues?q=is%3Aissue+is%3Aopen+label%3Abounty)
+- If you see one that you like, comment that you want to claim it. The person that created the bounty will respond with a go-ahead.
+- Write the necessary code or documentation in your own branch.
+- Create a pull request into the main GitHub repo with your changes.
+- Once your code is merged into the master app, you'll receive your bounty reward.
+
+__ProTip:__ If you learn something interesting while working in the codebase, be sure to add it in `./knowledge` so everyone can benefit!
+
+
+### Other features
+
+**Feel free to extend this app with other programmable banking features you'd like.** We can't guarantee it'll be merged into the main branch, but if it provides real value there's a good chance it will be. Please make sure your code is well documented and it's reason for existing is explained well.
+
+### Issue tracking
+[Report any issues on GitHub](https://github.com/programmable-banking-community/banking.make/issues/new)
+
+
 ## Getting set up
 - Fork the code - either from this [REPL directly](https://replit.com/@OfferZenMake/programmable-banking) or [from GitHub](http://github.com/programmable-banking-community/banking.make/issues/new) if you prefer to work locally
 - Configure the app's components to point to the domain your REPL is hosted at
@@ -27,21 +47,4 @@ This repo is a community space for playing with programmable banking, and buildi
 
 
 
-## How to contribute
 
-### Bounties
-- Check out [available bounties on GitHub](https://github.com/programmable-banking-community/banking.make/issues?q=is%3Aissue+is%3Aopen+label%3Abounty)
-- If you see one that you like, comment that you want to claim it. The person that created the bounty will respond with a go-ahead.
-- Write the necessary code or documentation in your own branch.
-- Create a pull request into the main GitHub repo with your changes.
-- Once your code is merged into the master app, you'll receive your bounty reward.
-
-__ProTip:__ If you learn something interesting while working in the codebase, be sure to add it in `./knowledge` so everyone can benefit!
-
-
-### Other features
-
-**Feel free to extend this app with other programmable banking features you'd like.** We can't guarantee it'll be merged into the main branch, but if it provides real value there's a good chance it will be. Please make sure your code is well documented and it's reason for existing is explained well.
-
-### Issue tracking
-[Report any issues on GitHub](https://github.com/programmable-banking-community/banking.make/issues/new)
