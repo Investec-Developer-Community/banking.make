@@ -10,18 +10,21 @@ This repo is a community space for playing with programmable banking, and buildi
 - We have a list of bounties for functionality that we think will be useful to add.
 - 👉 Check out [available bounties as a starting point](https://github.com/programmable-banking-community/banking.make/issues?q=is%3Aissue+is%3Aopen+label%3Abounty)!
 
-__What do I do when I find one I like?__
-- If you see one that you like, comment that you want to claim it. The person that created the bounty will respond with a go-ahead 👍.
+__What do I do when I find a bounty I like?__
+- If you see one that you like, comment that you want to claim it. The person that created the bounty will respond with a "go-ahead 👍".
 - You can clone this repo and work on your local machine if you want. 
 
-😎__ProTip:__ but we recommend [forking our REPL on Replit](https://replit.com/@OfferZenMake/programmable-banking) for a quick-start. Replit is a great dev tool that makes it easy to run and edit code.
+💡 __ProTip:__ but we recommend [forking our REPL on Replit](https://replit.com/@OfferZenMake/programmable-banking) for a quick-start. Replit is a great dev tool that makes it easy to run and edit code.
 
 - Write the necessary code or documentation in your fork.
 - Create a pull request into the main GitHub repo with your changes.
 - Once your code is merged into the master app, you'll receive your bounty reward.
 
-💡__ProTip:__ If you learn something interesting while working in the codebase, be sure to add it in `./knowledge` so everyone can benefit!
+💡 __ProTip:__ If you learn something interesting while working in the codebase, be sure to add it in `./knowledge` so everyone can benefit!
 
+
+__Where do I get support__
+- Great question! Drop into the [dedicated bounties Slack channel here](https://offerzen-community.slack.com/archives/C048GPNT49W). We'll be more than happy to help with any questiobs or support around your bounties build/ the bounties in general/ or if you just want to hang out and help others. 
 
 ### Other features
 
@@ -55,7 +58,3 @@ __What do I do when I find one I like?__
 - There is a connector file in `public/Investec.swagger.json` that you can import into [Microsoft Power Automate](https://make.powerautomate.com) or any other low-code tool
 - `modules/power_automate.js` handles pubsub subscriptions for PowerAutomate events
 - `routes/investec/special.js` contains several routes specific to Power Automate
-
-
-
-
