@@ -52,7 +52,7 @@ __Where do I get support?__
 ## Features
 
 ### Investec API
-- `routes/investec.js` proxies any incoming `GET` and `POST` requests to the investec API while converting API keys into single-use bearer tokens. The app doesn't store any sensitive information.
+- `routes/investec.js` proxies any incoming `GET` and `POST` requests to the Investec API while converting API keys into single-use bearer tokens. The app doesn't store any sensitive information.
 - `routes/investec/auth.js` contains middleware to extract partition information from API keys, if the requester is using partitioned access and `routes/investec/card_partitions.js` contains config for those partitions
 - `routes/investec/special.js` extends Investec API base functionality by providing an abstraction layer for card control, handling card events, and simplifying the transfer endpoint
 
