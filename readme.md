@@ -12,7 +12,7 @@ This repo is a community space for playing with programmable banking, and buildi
 
 ### Bounties 
 
-**Bounty Season #1: 25 October to 14 November 2022**
+**Bounty Season #1: 26 October to 14 November 2022**
 
 We have a list of bounties for functionality that we think will be useful to add.
 
