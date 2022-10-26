@@ -1,9 +1,14 @@
 # banking.make.dev
 
+The **Programmable Banking Community** is a community of 700+ software devs on a mission.
+We want to make Programmable Banking a reality for South African developers and businesses: by building open-source tech with Investec Programmable Banking foundations. [Learn more here](https://offerzen.gitbook.io/programmable-banking-community-wiki/).
+
+# What is this repo about?
+
 This repo is a community space for playing with programmable banking, and building/extending its API functionality. We hope that anyone interested in building useful financial tools can use this repo to increase functionality for personal and business use-cases.
 
 
-## How to contribute
+## How do I contribute?
 
 ### Bounties 
 
