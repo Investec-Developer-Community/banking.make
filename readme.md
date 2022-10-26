@@ -1,4 +1,4 @@
-# banking.make.dev
+# Bounties Playground | banking.make.dev
 
 The **Programmable Banking Community** is a community of 700+ software devs on a mission.
 We want to make Programmable Banking a reality for South African developers and businesses: by building open-source tech with Investec Programmable Banking foundations. [Learn more here](https://offerzen.gitbook.io/programmable-banking-community-wiki/).
@@ -8,18 +8,19 @@ We want to make Programmable Banking a reality for South African developers and 
 This repo is a community space for playing with programmable banking, and building/extending its API functionality. We hope that anyone interested in building useful financial tools can use this repo to increase functionality for personal and business use-cases.
 
 
-## How do I contribute?
+## What do I need to know?
 
 ### Bounties 
 
 **Bounty Season #1: 25 October to 14 November 2022**
 
-- We have a list of bounties for functionality that we think will be useful to add.
+We have a list of bounties for functionality that we think will be useful to add.
+
 - 👉 Check out [available bounties as a starting point](https://github.com/programmable-banking-community/banking.make/issues?q=is%3Aissue+is%3Aopen+label%3Abounty)!
 
 __What do I do when I find a bounty I like?__
-- If you see one that you like, comment that you want to claim it. The person that created the bounty will respond with a "go-ahead 👍".
-- You can clone this repo and work on your local machine if you want. 
+- If you see one that you like, comment that you want to claim it. The person that created the bounty will respond with a **"go-ahead 👍"**.
+- You can clone this repo and work on your local machine. 
 
 💡 __ProTip:__ We recommend [forking our REPL on Replit](https://replit.com/@OfferZenMake/programmable-banking) for a quick-start. Replit is a great dev tool that makes it easy to run and edit code.
 
@@ -33,7 +34,7 @@ __Where do I get support?__
 
 💡 __ProTip:__ If you learn something interesting while working in the codebase, be sure to add it in `./knowledge` so everyone can benefit!
 
-### Other features
+### Adding Other features
 
 **Feel free to extend this app with other programmable banking features you'd like.** We can't guarantee it'll be merged into the main branch, but if it provides real value there's a good chance it will be. Please make sure your code is well documented and it's reason for existing is explained well.
 
@@ -49,7 +50,7 @@ __Where do I get support?__
 - `npm install` and `npm start` (I think, not sure - I just use Replit and it auto-boots)
 
 
-## Features
+## Current Features
 
 ### Investec API
 - `routes/investec.js` proxies any incoming `GET` and `POST` requests to the Investec API while converting API keys into single-use bearer tokens. The app doesn't store any sensitive information.
