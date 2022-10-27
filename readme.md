@@ -12,7 +12,7 @@ This repo is a community space for playing with programmable banking, and buildi
 
 ### Bounties 
 
-**Bounty Season #1: 27 October to 14 November 2022**
+> ⏰ Each bounty season will run **over three weekends**. _Season #1_: Starts 27 October and ends 14 November 2022 🏁
 
 We have a list of bounties for functionality that we think will be useful to add.
 
@@ -66,3 +66,16 @@ __Where do I get support?__
 - There is a connector file in `public/Investec.swagger.json` that you can import into [Microsoft Power Automate](https://make.powerautomate.com) or any other low-code tool
 - `modules/power_automate.js` handles pubsub subscriptions for PowerAutomate events
 - `routes/investec/special.js` contains several routes specific to Power Automate
+
+---
+
+# FAQs
+
+1.  **Can >1 person work on/request to work on a bounty at the same time? How is the decision about who works on it made? **
+⋅⋅⋅Anyone can go after any bounty - it just depends on who commits first with all the correct criteria.
+2.  **Is there any time frame for the bounties to be completed in? **
+⋅⋅⋅Yes, there is. There are Bounty seasons - 3 weekends per bounty season.
+3.  **What is the engagement model once someone has started working on a bounty? **
+⋅⋅⋅You can either work on your own and commit for approval as is, or they can join the [Slack channel #03_community-bounties](https://offerzen-community.slack.com/archives/C048GPNT49W) for support and to book a "build session" with a community champion.
+4.  **What if the person cannot complete the bounty? **
+⋅⋅⋅Then they don’t complete. We’ll make a call after each season to either roll over any unclaimed bounties and add new ones for the next seasons.
