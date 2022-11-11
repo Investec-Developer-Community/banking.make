@@ -525,6 +525,16 @@
                     false
                   ],
                   "default": true
+                },
+                "allowlist": {
+                  "type": "string",
+                  "description": "Comma-separated list of allowed merchant codes",
+                  "title": "Allowlist"
+                },
+                "blocklist": {
+                  "type": "string",
+                  "description": "Comma-separated list of blocked merchant codes",
+                  "title": "Blocklist"
                 }
               },
               "required": [
@@ -692,3 +702,4 @@
   ],
   "tags": []
 }
+

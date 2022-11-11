@@ -60,6 +60,7 @@ __Where do I get support?__
 
 ### RootCode card control
 - `modules/root_code_card_policy.js` converts simple config flags into a JS bundle that can be compiled as RootCode onto a supported card
+- The path `/special/cards/{cardKey}/policy` accepts optional body params `allowlist` & `blocklist` as a comma-separated list of merchant codes. A list of merchant codes and descriptions can be found at the path `/za/v1/cards/merchants`.
 
 
 ### Power Automate
