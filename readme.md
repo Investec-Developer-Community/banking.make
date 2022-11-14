@@ -12,7 +12,9 @@ This repo is a community space for playing with programmable banking, and buildi
 
 ### Bounties 
 
-> ⏰ Each bounty season will run **over three weekends**. _Season #1_: Starts 27 October and ends 14 November 2022 🏁
+> ⏰ Each bounty season will run **over three weekends**. 
+> _Season #1_: Starts 27 October and ends 14 November 2022 🏁
+> _Season #2_: Starts 15 November and ends 5 Deccember 2022 🏁
 
 We have a list of bounties for functionality that we think will be useful to add.
 
