@@ -1,6 +1,6 @@
 # Bounties Playground | banking.make.dev
 
-The **Programmable Banking Community** is a community of 700+ software devs on a mission.
+The **Programmable Banking Community** is a community of 800+ software devs on a mission.
 We want to make Programmable Banking a reality for South African developers and businesses: by building open-source tech with Investec Programmable Banking foundations. [Learn more here](https://offerzen.gitbook.io/programmable-banking-community-wiki/).
 
 # What is this repo about?
