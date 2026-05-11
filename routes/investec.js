@@ -6,6 +6,14 @@ router.use('/special', require('./investec/special'))
 const Investec = require('../modules/investec')
 const cardPartitions = require('./investec/card_partitions')
 
+function sendInvestecResponse(_res, response) {
+  if (!response) {
+    return _res.status(502).json({ error: 'No response received from Investec API' })
+  }
+
+  return _res.status(response.status || 200).json(response.data)
+}
+
 // This route is not a pure proxy because we want to filter the results if there is a partition i.e. when sharing a single account with many users while only showing them particular cards
 router.get('/za/v1/cards', async (_req, _res) => {
   const investec = new Investec(_req.currentUser.token)
@@ -31,7 +39,7 @@ router.get('/za/v1/cards', async (_req, _res) => {
 router.get('/*', async (_req, _res) => {
   const investec = new Investec(_req.currentUser.token)
   const response = await investec.getWithAuth(_req.url)
-  _res.json(response.data)
+  sendInvestecResponse(_res, response)
 })
 
 // proxies any POST request to the investec adapter
@@ -39,7 +47,7 @@ router.get('/*', async (_req, _res) => {
 router.post('/*', async (_req, _res) => {
   const investec = new Investec(_req.currentUser.token)
   const response = await investec.postWithAuth(_req.url, _req.body)
-  _res.json(response.data)
+  sendInvestecResponse(_res, response)
 })
 
 module.exports = router
