@@ -61,7 +61,7 @@ class Investec {
   }
 
   async get(path) {
-    await axios.get(path, this.axiosConfig()).catch(logError)
+    return await axios.get(path, this.axiosConfig()).catch(logError)
   }
 
   async getWithAuth(path) {

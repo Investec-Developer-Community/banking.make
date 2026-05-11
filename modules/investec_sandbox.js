@@ -42,22 +42,59 @@ const transactions = [
   }
 ]
 
+const balance = {
+  accountId,
+  currentBalance: 125500,
+  availableBalance: 125500,
+  currency: 'ZAR'
+}
+
 function response(data, status = 200) {
   return { status, data }
 }
 
+function parsePath(path) {
+  return new URL(path, 'https://sandbox.investec.local')
+}
+
+function dateInRange(transaction, fromDate, toDate) {
+  const transactionDate = transaction.transactionDate || transaction.postingDate
+  return (!fromDate || transactionDate >= fromDate) &&
+    (!toDate || transactionDate <= toDate)
+}
+
 class InvestecSandbox {
   async getWithAuth(path) {
-    if (path === '/za/pb/v1/accounts') {
+    const url = parsePath(path)
+
+    if (url.pathname === '/za/pb/v1/accounts') {
       return response({ data: { accounts } })
     }
 
-    const transactionsMatch = path.match(/^\/za\/pb\/v1\/accounts\/([^/]+)\/transactions/)
+    const balanceMatch = url.pathname.match(/^\/za\/pb\/v1\/accounts\/([^/]+)\/balance$/)
+    if (balanceMatch) {
+      const requestedAccountId = balanceMatch[1]
+      if (requestedAccountId !== accountId) {
+        return response({ data: { accountId: requestedAccountId } }, 404)
+      }
+
+      return response({ data: balance })
+    }
+
+    const transactionsMatch = url.pathname.match(/^\/za\/pb\/v1\/accounts\/([^/]+)\/transactions$/)
     if (transactionsMatch) {
       const requestedAccountId = transactionsMatch[1]
+      const fromDate = url.searchParams.get('fromDate')
+      const toDate = url.searchParams.get('toDate')
+      const transactionType = url.searchParams.get('transactionType')
+
       return response({
         data: {
-          transactions: transactions.filter(transaction => transaction.accountId === requestedAccountId)
+          transactions: transactions.filter(transaction =>
+            transaction.accountId === requestedAccountId &&
+            dateInRange(transaction, fromDate, toDate) &&
+            (!transactionType || transaction.transactionType === transactionType)
+          )
         }
       })
     }
