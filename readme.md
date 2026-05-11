@@ -61,6 +61,18 @@ __Where do I get support?__
 - `routes/investec/auth.js` contains middleware to extract partition information from API keys, if the requester is using partitioned access and `routes/investec/card_partitions.js` contains config for those partitions
 - `routes/investec/special.js` extends Investec API base functionality by providing an abstraction layer for card control, handling card events, and simplifying the transfer endpoint
 
+#### Sandbox mode
+
+Use `SANDBOX` Basic auth credentials to exercise Investec account endpoints without calling the live Investec API. This lets clients switch between live and sandbox mode by changing credentials while keeping the same API paths.
+
+Sandbox mode currently supports:
+
+- `GET /investec/za/pb/v1/accounts`
+- `GET /investec/za/pb/v1/accounts/sandbox-account-1/balance`
+- `GET /investec/za/pb/v1/accounts/sandbox-account-1/transactions`
+
+The transactions endpoint also accepts the optional `fromDate`, `toDate`, and `transactionType` query parameters.
+
 
 ### RootCode card control
 - `modules/root_code_card_policy.js` converts simple config flags into a JS bundle that can be compiled as RootCode onto a supported card
